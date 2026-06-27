@@ -43,3 +43,11 @@ check:
 # Ejemplo de curl con mock (dev)
 curl-example:
     curl -s -H "X-API-Key: changeme" http://localhost:8000/api/v1/cedula/V12345678 | python3 -m json.tool
+
+# Deploy a Vercel (preview)
+deploy:
+    vercel
+
+# Deploy a Vercel (producción)
+deploy-prod:
+    vercel --prod
