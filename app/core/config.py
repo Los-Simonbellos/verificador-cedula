@@ -15,7 +15,7 @@ class Settings(BaseSettings):
     # "pnp" | "mock"
     provider: str = "mock"
     source_url: str = "https://www.sistemaspnp.com/cedula"
-    http_timeout: float = 10.0
+    request_timeout: float = 10.0
     user_agent: str = (
         "Mozilla/5.0 (compatible; verificador-cedula/0.1; +https://github.com/cuevasrja)"
     )

@@ -4,6 +4,7 @@ import pytest_asyncio
 from httpx import ASGITransport, AsyncClient
 
 from app.cache.memory import InMemoryTTLCache
+from app.core.config import settings
 from app.main import app
 from app.routers.cedula import get_cedula_service
 from app.services.cedula_service import CedulaService
@@ -24,7 +25,7 @@ async def async_client() -> AsyncClient:
     async with AsyncClient(
         transport=ASGITransport(app=app),
         base_url="http://test",
-        headers={"X-API-Key": "changeme"},
+        headers={"X-API-Key": settings.api_key},
     ) as client:
         yield client
     app.dependency_overrides.clear()

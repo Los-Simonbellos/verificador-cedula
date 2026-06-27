@@ -45,7 +45,7 @@ class PNPScraperProvider:
 
         # Cliente fresco por consulta para aislar la sesión PHP
         async with httpx.AsyncClient(
-            timeout=settings.http_timeout,
+            timeout=settings.request_timeout,
             headers={"User-Agent": settings.user_agent},
             follow_redirects=True,
         ) as client:
